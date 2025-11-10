@@ -1,0 +1,3 @@
+[submodule "grin-wallet"]
+	path = grin-wallet
+	url = https://github.com/mimblewimble/grin-wallet.git

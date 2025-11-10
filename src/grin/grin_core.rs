@@ -92,12 +92,11 @@ impl GrinCore {
         // Initial transaction slate
         let lock_height_param = if timelock != 0 { Some(timelock) } else { None };
         let kernel_feat_param = if lock_height_param.is_some() { 2 } else { 0 };
-        let mut slate = Slate::blank_with_kernel_features(
-            num_participants,
-            false,
-            kernel_feat_param,
-            lock_height_param,
-        );
+        let mut slate = Slate::blank(num_participants, false);
+        slate.kernel_features = kernel_feat_param;
+        if let Some(lock_height) = lock_height_param {
+            slate.ttl_cutoff_height = lock_height;
+        }
         // Calculcate basefee based on number of inputs and expected outputs
         let fee = tx_fee(inputs.len(), num_of_outputs, 1);
         println!("Fee is {}", fee);
