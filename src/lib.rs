@@ -1,6 +1,19 @@
 use std::os::raw::{c_char, c_int};
 use std::ffi::CStr;
 
+pub mod bitcoin;
+pub mod commands;
+pub mod constants;
+pub mod enums;
+pub mod grin;
+pub mod net;
+pub mod settings;
+pub mod swap;
+pub mod util;
+
+pub use settings::Settings;
+pub use swap::swap_types::SwapSlate;
+
 use once_cell::sync::Lazy;
 use std::sync::Mutex;
 

@@ -15,5 +15,5 @@
     },
     "tcp_addr" : "127.0.0.1",
     "tcp_port" : "80",
-    "slate_directory" : "slates"
+    "slate_directory" : "../../wallet_data/wallet_data/atomic_swap_txs"
 }

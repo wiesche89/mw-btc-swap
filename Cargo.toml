@@ -8,7 +8,7 @@ edition = "2018"
 
 [lib]
 name = "mw_atomic_swap"
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 serde = { version = "=1.0.228", features = ["derive"] }
